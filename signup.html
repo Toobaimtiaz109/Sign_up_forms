@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "poppins", sans-serif;
+        box-sizing: border-box;
+      }
+      @media screen {
+        .form .coloumn {
+          flex-wrap: wrap;    /* the flex items break into several lines  */
+        }
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;   
+        justify-content: center;  
+        background-color: lavender;
+        padding: 20px;
+      }
+      .container {
+        position: relative;
+        max-width: 700px;
+        width: 100%;
+        padding: 25px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      }
+      .heading-card img{
+       max-width: 700px;
+       height: 280px;
+       position: relative;
+       padding: 10px;
+       width: 644px;
+      }
+      .heading-card :where( img , header){
+       position: absolute;
+       top: 0;
+       text-align: center;
+       justify-content: center;
+      }
+      .heading-card p{
+       position: absolute;
+       right: 0;
+       top: 0;
+       padding-top: 188px;
+       padding-right: 158px;
+       color: #333;
+       font-weight: 170;
+      }
+      .container header {
+        font-size: 2.7rem;
+        color: black;
+        font-weight: 500;
+        text-align: center;
+        padding-left: 225px;
+        padding-bottom: 0px;
+        padding-top: 130px;
+      }
+      .container .form {
+        padding: 30px;
+      }
+      .container .input-box {
+        width: 100%;
+        margin-top: 20px;
+      }
+      .input-box label {
+        color: #333;
+      }
+      .input-box input:focus{
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+      }
+      .form :where(.input-box input , .select-box) { 
+        position: relative;
+        padding: 0 15px;
+        height: 50px;
+        width: 100%;
+        font-size: 1rem;
+        color: rgb(9 , 6 , 6);
+        margin-top: 8px;
+        outline: none;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+      }
+      .form .column {
+        display: flex;
+        column-gap: 15px;
+      }
+      .form .gender-box{
+        margin-top: 20px;
+      }
+      .gender-box h3{
+          font-size: 1rem ;
+          font-weight: 400;
+        }
+        .gender{
+            accent-color: rgb(31, 35, 255);
+        }
+        .form .gender-option{
+            display: flex;
+            align-items: center;
+            column-gap: 130px;
+            padding: 15px;
+            flex-wrap: wrap;
+        }
+        .form .gender label{
+          color: #707070;
+        }
+        .form .gender input , .gender label{
+          cursor: pointer;
+        }
+        .form .select-box input{
+        display: flex;
+      }
+     .form .select-box select{
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+        color: rgb(99, 99, 99);
+        background-color: white;
+        font-size: 1rem;
+     }
+     .form .select-box1 input{
+      width: 288px;
+     }
+     .address :where(input , .select-box){
+        margin-top: 15px;
+     }
+     .form button{
+        width:100%;
+        height:55px;
+        background-color: rgba(33, 186, 242, 0.852);
+        margin-top: 30px;
+        font-size: 1rem;
+        font-weight: 400;
+        color: white;
+        border-radius: 6px;
+        border : none;
+        transition: all 0.2s ease;
+        /* box-shadow: 0 0 15px rgba(123, 105, 239, 0.2); */
+        cursor: pointer;
+     }
+     .form button:hover{
+        background-color:rgba(10, 153, 205, 0.852);
+     }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <div class="heading-card">
+        <img src="images/kelli-tungay-2LJ4rqK2qfU-unsplash.jpg">
+        <header>Registration Form</header>
+        <p>Please fill the below information carefully</p>
+      </div>
+      <form class="form">
+        <div class="input-box">
+          <label for="name">Full Name
+            <span style="color: red;">*</span>
+          </label>
+          <input type="text" placeholder="Enter your name here" required />
+        </div>
+
+        <div class="input-box">
+          <label for="name">Email Adress
+            <span style="color: red;">*</span>
+          </label>
+          <input type="email" placeholder="name@gmail.com" required />
+        </div>
+
+        <div class="coloumn">
+          <div class="input-box">
+            <label for="name">Phone Number
+                <span style="color: red;">*</span>
+            </label>
+            <input type="number" placeholder="Enter your number here" required />
+          </div>
+
+          <div class="input-box">
+            <label for="name">Birth Date
+                <span style="color: red;">*</span>
+            </label>
+            <input type="datetime-local"placeholder="Enter your name here" required/>
+          </div>
+        </div>
+
+        <div class="gender-box">
+          <h3>Gender
+            <span style="color: red;">*</span>
+          </h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender" />
+              <label for="check-male">Male</label>
+            </div>
+
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" />
+              <label for="check-female">Female</label>
+            </div>
+
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" />
+              <label for="check-other">Prefer not to say</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-box address">
+            <label for="name">Address
+                <span style="color: red;">*</span>
+            </label>
+            <input type="text"placeholder="Enter street address" required/>
+            <input type="text"placeholder="Enter steet address line 2 " required/>
+            <div class="column">
+                <div class="select-box">
+                    <select>
+                        <option value="Country">Country</option>
+                        <option value="America">America</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Canada">Canada</option>
+                        <option value="India">India</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Pakistan">Pakistan</option>
+                        
+                    </select>
+                </div>
+                <div class="select-box1">
+                    <input type="text"placeholder="Enter your city here" required/>
+                </div>
+            </div>
+            <div class="column">
+                <input type="text"placeholder="Enter your region here" required/>
+                <input type="number"placeholder="Enter your postal code here" required/>
+            </div>
+        </div>
+        <button>Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
